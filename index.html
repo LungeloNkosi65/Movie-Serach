@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <base href="">
+     <script src="./assets/search-element.js"></script>
+    
+</head>
+<body>
+    <movie-search id="searchid"></movie-search>
+
+
+    <input type="text" placeholder="Search movie by title" id="param">
+    <button type="button" onclick="getInputValue();">Search Movie</button>
+    <script src="" async defer></script>
+
+    <script>
+        const search = document.querySelector('movie-search');
+        search.addEventListener('serachresult', (event) => {
+          console.log(`"search reasults" emitted: ${event.detail}`)
+        });
+    
+        function getInputValue() {
+          document.getElementById('searchid').searchparam = getTextBoxValue('param');
+        }
+    
+        function getTextBoxValue(textBoxId) {
+          return document.getElementById(textBoxId).value;
+        }
+      </script>
+</body>
+
+
+</html>
